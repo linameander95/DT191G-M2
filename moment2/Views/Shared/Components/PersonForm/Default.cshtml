@@ -1,0 +1,11 @@
+@model Person
+
+<form asp-action="About" asp-controller="Home" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="Name" value="@Model.Name" />
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="Age" value="@Model.Age" />
+
+    <input type="submit" value="Submit" />
+</form>

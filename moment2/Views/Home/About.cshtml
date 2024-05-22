@@ -1,0 +1,12 @@
+@model Person
+@{
+    ViewData["Title"] = "About Page";
+    var hour = DateTime.Now.Hour;
+    var greeting = hour < 3 ? "Hello" : hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening";
+}
+<p>@greeting! Input a name and age in the fields below to display it.</p>
+@await Component.InvokeAsync("PersonForm")
+@if (Model != null)
+{
+    <p>You've entered the name @Model.Name and the age @Model.Age to the list.</p>
+}
